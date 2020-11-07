@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>Airdely</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+       <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
+  </head>
+  <body>
+<div class="page_header">
+  <div class="container">
+    <h1>About Us</h1>
+  </div>
+</div>
+<div class="page_content">
+<div class="container">
+{% if aboutus_content %}
+	{{aboutus_content|safe|escape}}
+{% else %}
+<p>
+    Inspired by the emerging trend of shared economy and crowd sourcing, AIRDELY
+TECHNOLOGIES PTE LTD (AIRDELY) is established to build on the crowd
+shipping concept, leveraging on peer-to-peer delivery by providing a platform to
+match air courier needs to the social activity of air traveling.</p>
+<p>
+AIRDELY aspires to revolutionise the courier industry by providing a mobile
+application and website for booking and registration for both customer (parcel sender)
+and air traveler supported by automated task assignment matching software to deliver
+parcel fast and cheap and at the same time for the air traveller to earn money
+whenever they fly. AIRDELY is revolutionising the travel and courier industry,
+making overseas travel inexpensive and fun to travel, turning a cost centre into a
+potential earning and profit centre. Air traveller will be able to monetise their unused
+luggage allowances by carrying parcels for AIRDELY’s customers.</p>
+<p>
+AIRDELY Centre will provide administrative and parcel security screening to ensure
+that all parcels are safe to deliver by our air traveller. The parcels will then be handed
+over to the Air Traveller to carry it to the overseas airport for delivery to the Customer
+Recipient’s address. In addition, all parcels transacted via AIRDELY platform will be
+insured against damages and losses. Ultimately, AIRDELY hopes to make travelling
+fun and inexpensive.</p>
+<p>
+All air travellers must be vetted through our screening system to ensure their trust and
+dedication to handle and deliver parcels for our customers to their destination airport.</p>
+<p>
+AIRDELY is the first mover using this concept in the courier industry and we aim to
+be the best in the industry. AIRDELY aims to be a global, multi-nation, multi-cities
+company, with collection centres in most airports and deliveries to all areas globally.</p>
+
+<ul> <li>AIRDELY can achieve a much faster delivery timeline at a lower cost even for
+last minute delivery then most of the bigger and more established courier
+companies. By leveraging on the travellers’ destinations, it opens up the
+number of destinations available for delivery. Personal care and handling of
+the parcels by the air traveller himself.</li>
+<li>AIRDELY will help the air travellers to optimise his unused luggage
+allowances to carry parcels meant for their destined airport for a given fee,
+according to the weight and value of the parcels which they are carrying.
+Thus, creating an all-win situation for all parties, the air travellers can earn
+extra allowances even though on a social activity, the customer is able to
+deliver his parcel at a shorter time frame and at a lower cost.</li></ul>
+<p>
+Currently, AIRDELY Apps is only available for parcels outbound from Singapore.
+Whenever you have a parcel to send, call AIRDELY. Whenever you are travelling
+overseas, call AIRDELY. Always remember AIRDELY – Fly and Earn. Save to
+Deliver.</p>
+{% endif %}
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>Airdely</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+       <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select-style.css' %}">
+
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+  </head>
+  <body>
+    
+    
+<div class="page_header">
+  <div class="container">
+    <h1>Frequently Asked Questions</h1>
+  </div>
+</div>
+<div class="page_content">
+<div class="container">
+<!-- {% if faq_content %}
+  {{faq_content|safe|escape}}
+{% endif %} -->
+
+  <!-- {% for faq in all_faqs %}
+    <h1>{{faq.question}}</h1>
+    <h6>{{faq.answer}}</h6>
+  {% endfor %}   -->
+
+
+
+<div id="faq_accordion" class="faq_accordion">
+  {% if all_faqs %}
+    {% for faq in all_faqs %}
+      <div class="card mb-3">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collap_{{faq.id}}"><i class="fa fa-plus"></i> {{faq.question}}</a>
+        </div>
+        <div id="collap_{{faq.id}}" class="collapse" data-parent="#faq_accordion">
+          <div class="card-body pt-3">{{faq.answer}}</div>
+        </div>
+      </div>
+      <!-- <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">Is
+          Collapsible Group Item #2
+        </a>
+        </div>
+        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+            Collapsible Group Item #3
+          </a>
+        </div>
+        <div id="collapseThree" class="collapse" data-parent="#accordion">
+          <div class="card-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+      </div> -->
+    {% endfor %}  
+  {% endif %}
+</div>
+
+</div>
+</div>
+
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.show").each(function(){
+          $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+          $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+        }).on('hide.bs.collapse', function(){
+          $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+        });
+    });
+</script>
+
+  </body>
+</html>

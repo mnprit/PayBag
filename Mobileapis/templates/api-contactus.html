@@ -1,0 +1,232 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <title>Airdely</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}" >
+       <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select-style.css' %}">
+
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+
+     <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script>
+  $( document ).ready(function() {
+    $('#mobile').val('')
+    $('#email').val('')
+    $('#country').val('')
+    $('#msg').text('')
+});
+</script>
+
+<!-- <script>
+
+  $.noConflict();
+
+</script> -->
+
+  </head>
+  <body>
+    
+
+<form>
+<section class="page-heading">
+  <div class="container">
+    <h1>Contact Us</h1>
+  </div>
+</section>
+
+<section class="airdly-contctcntrs-sec">
+  <div class="container">
+    <div class="airdly-cntct-otr">
+
+      {% if all_airdelyfacilities %}
+        {% for airdelycentre in all_airdelyfacilities %}  
+          <div class="airdly-cntct-innr">
+            <div class="airdly-contct-info d-flex flex-column justify-content-between h-100">
+              <h4 >{{airdelycentre.collectioncentrename}}</h4>
+              <div class=" mt-0 mb-auto">
+                <p>{{airdelycentre.address}}</p>
+                <p>{{airdelycentre.city}}, <span class="airdelycentre-country">{{airdelycentre.country}}</span></p>
+                <!-- <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p> -->
+              </div>
+              <div class="conct-hrs"><p class="opn-hrs">Opening Hour:<span>{{airdelycentre.openingtime}}</span></p><p class="cls-hrs">Closing Hour:<span>{{airdelycentre.closingtime}}</span></p></div>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+      <!-- <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div>
+      <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div>
+      <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div>
+      <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div>
+      <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div>
+      <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div>
+      <div class="airdly-cntct-innr">
+        <div class="airdly-contct-info">
+          <h4>Airdely</h4>
+          <p >xyz city center</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i>1234567890</p>
+          <div class="conct-hrs"><p class="opn-hrs">Opening hrs:<span>00:01</span></p><p class="cls-hrs">Closing hrs:<span>00:01</span></p></div>
+        </div>
+      </div> -->
+    </div>  
+  </div>
+</section>
+
+<!-- <section class="contact-detail">
+   <div class="container">
+      {% if contactus_content %}
+      {{contactus_content|safe|escape}}
+      {% else %}
+      <div class="row">
+         <div class="col-md-6 contact-detail-left">
+            <h4>Contact@airdely.com</h4>
+            <h3>(+65) 6283 3359</h3>
+            <h5>TC Space@Tampines North 10 Tampines North Drive 4 #06-01 SINGAPORE 528553</h5>
+         </div>
+         <div class="col-md-6 contact-detail-right">
+            <h2>Operations Hours</h2>
+            <div class="timing">
+               <label>Timings</label>
+               <h5>09:00AM TO 07:00PM</h5>
+            </div>
+         </div>
+      </div>
+      {% endif %}
+   </div>
+</section> -->
+
+<section class="contact-form" id="contact-form1">
+   <div class="container">
+      <form>
+         {% csrf_token %}
+         <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <div class="card px-3 px-md-4 pb-3 pb-md-4">
+
+             <div class="form-group">
+              <input type="number" onkeydown="javascript: return event.keyCode === 8 || event.keyCode === 46 ? true : !isNaN(Number(event.key))" onKeyPress="if(this.value.length==15) return false;" class="form-control" id="mobile" placeholder="Mobile Number" value="">
+              <p id="mobile_txt" class="text-danger"></p>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Email Address" value="">
+              <p id="email_txt" class="text-danger"></p>
+            </div>
+            <div class="form-group">
+              <select name="country" id="country"  class="form-control" >
+                <option value="">Select Country</option>
+                {% if all_countries %}
+                {% for country in all_countries %}
+                <option value="{{country.name}}">{{country.name}}</option>
+                {% endfor %}
+                {% endif %}
+              </select>
+              <p id="country_txt" class="text-danger"></p>
+            </div>
+            <div class="form-group">
+              <textarea type="text" class="form-control" id="msg" placeholder="Type here message"></textarea>
+              <p id="msg_txt" class="text-danger"></p>
+            </div>
+
+         <button type="button" id="contact_us_btn">SEND YOUR MESSAGE</button>
+         <center>
+            <p id="btn_txt" class="text-danger"></p>
+         </center>
+
+          </div>
+        </div>
+      </div>
+      </form>
+   </div>
+</section>
+
+<div class="modal fade success_modal" id="ParcelDetailsSuccessModal"  role="dialog" data-backdrop="static" data-keyboard="false">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-header border-0">
+       <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+     </div>
+     <div class="modal-body">
+       <span class="green-thumb"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
+       <h3 class="response-msg">Your query has been registered with us.</h3>
+     </div>
+   </div>
+ </div>
+</div>
+<div id="loading-img" style="display: none;">
+   <img src="{% static 'images/loading.gif' %}">
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   
+
+
+<script src="{% static 'js/api_contactus.js' %}"></script>
+     <script type="text/javascript">
+      $(".search-btn").click(function(){
+  $(".serach-form").toggle();
+});
+    </script>
+
+<script type="text/javascript">
+  $("#form-btn1").click(function() {
+    $('html, body').animate({
+        scrollTop: $(".contact-form").offset().top - 80
+    }, 1000);
+});
+</script>
+</body>
+</html>
